@@ -25,15 +25,18 @@ const NextButton = ({ percentage, scrollTo }) => {
   }, [percentage]);
 
   useEffect(() => {
-    progressAnimation.addListener((value) => {
-      const strokeDashoffset =
-        circumference - (circumference * value.value) / 100;
-      if (progressRef.current) {
-        progressRef.current.setNativeProps({
-          strokeDashoffset,
-        });
-      }
-    }, [percentage]);
+    progressAnimation.addListener(
+      (value) => {
+        const strokeDashoffset =
+          circumference - (circumference * value.value) / 100;
+        if (progressRef.current) {
+          progressRef.current.setNativeProps({
+            strokeDashoffset,
+          });
+        }
+      },
+      [percentage]
+    );
 
     return () => {
       progressAnimation.removeAllListeners();
@@ -63,7 +66,11 @@ const NextButton = ({ percentage, scrollTo }) => {
           />
         </G>
       </Svg>
-      <TouchableOpacity onPress={scrollTo} style={styles.button} activeOpacity={0.6}>
+      <TouchableOpacity
+        onPress={scrollTo}
+        style={styles.button}
+        activeOpacity={0.6}
+      >
         <AntDesign name="arrowRight" size={32} color="white" />
       </TouchableOpacity>
     </View>
