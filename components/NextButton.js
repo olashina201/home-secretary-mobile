@@ -4,7 +4,7 @@ import React, { useEffect, useRef } from "react";
 import { AntDesign } from "@expo/vector-icons";
 
 const NextButton = ({ percentage, scrollTo }) => {
-  const size = 120;
+  const size = 128;
   const strokeWidth = 2;
   const center = size / 2;
   const radius = size / 2 - strokeWidth / 2;
@@ -44,7 +44,7 @@ const NextButton = ({ percentage, scrollTo }) => {
   }, []);
 
   return (
-    <View>
+    <View style={styles.container}>
       <Svg width={size} height={size}>
         <G rotation="-90" origin={center}>
           <Circle
@@ -62,7 +62,7 @@ const NextButton = ({ percentage, scrollTo }) => {
             r={radius}
             strokeWidth={strokeWidth}
             strokeDasharray={circumference}
-            // strokeDashoffset={circumference - (circumference * 25) / 100}
+            strokeDashoffset={circumference - (circumference * 60) / 100}
           />
         </G>
       </Svg>
@@ -71,7 +71,7 @@ const NextButton = ({ percentage, scrollTo }) => {
         style={styles.button}
         activeOpacity={0.6}
       >
-        <AntDesign name="arrowRight" size={32} color="white" />
+        <AntDesign name="arrowright" size={32} color="white" />
       </TouchableOpacity>
     </View>
   );
@@ -82,6 +82,7 @@ export default NextButton;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    display: 'flex',
     justifyContent: "center",
     alignItems: "center",
   },
