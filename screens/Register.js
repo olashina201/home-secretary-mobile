@@ -70,6 +70,7 @@ const Register = () => {
           textContentType="password"
         />
         <SubmitButton title="Register" />
+        <AppText style={styles.text}>or</AppText>
         <SubmitButton title="Sign up with Google" />
       </Form>
       <AppText style={styles.text}>Already have an account? Signin</AppText>
@@ -79,9 +80,8 @@ const Register = () => {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10,
+    padding: 15,
     width: "100%",
-    marginTop: 10,
   },
   logo: {
     width: 80,
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   text: {
-    marginTop: 20,
+    marginTop: 10,
     textAlign: "center",
   }
 });
