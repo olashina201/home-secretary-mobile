@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, Image } from "react-native";
+import { StyleSheet, Image, View } from "react-native";
 import * as Yup from "yup";
 
 import Screen from "../components/Screen";
@@ -17,43 +17,44 @@ const validationSchema = Yup.object().shape({
 
 const Register = () => {
   return (
-    <Screen style={styles.container}>
-      <Image
-        style={styles.logo}
-        source={require("../../assets/logo-red.png")}
-      />
-      <Form
-        initialValues={{ name: "", email: "", password: "" }}
-        onSubmit={(values) => console.log(values)}
-        validationSchema={validationSchema}
-      >
-        <FormField
-          autoCorrect={false}
-          icon="account"
-          name="name"
-          placeholder="Name"
-        />
-        <FormField
-          autoCapitalize="none"
-          autoCorrect={false}
-          icon="email"
-          keyboardType="email-address"
-          name="email"
-          placeholder="Email"
-          textContentType="emailAddress"
-        />
-        <FormField
-          autoCapitalize="none"
-          autoCorrect={false}
-          icon="lock"
-          name="password"
-          placeholder="Password"
-          secureTextEntry
-          textContentType="password"
-        />
-        <SubmitButton title="Register" />
-      </Form>
-    </Screen>
+    <View>Hello</View>
+    // <Screen style={styles.container}>
+    //   {/* <Image
+    //     style={styles.logo}
+    //     source={require("../../assets/logo-red.png")}
+    //   /> */}
+    //   <Form
+    //     initialValues={{ name: "", email: "", password: "" }}
+    //     onSubmit={(values) => console.log(values)}
+    //     validationSchema={validationSchema}
+    //   >
+    //     <FormField
+    //       autoCorrect={false}
+    //       icon="account"
+    //       name="name"
+    //       placeholder="Name"
+    //     />
+    //     <FormField
+    //       autoCapitalize="none"
+    //       autoCorrect={false}
+    //       icon="email"
+    //       keyboardType="email-address"
+    //       name="email"
+    //       placeholder="Email"
+    //       textContentType="emailAddress"
+    //     />
+    //     <FormField
+    //       autoCapitalize="none"
+    //       autoCorrect={false}
+    //       icon="lock"
+    //       name="password"
+    //       placeholder="Password"
+    //       secureTextEntry
+    //       textContentType="password"
+    //     />
+    //     <SubmitButton title="Register" />
+    //   </Form>
+    // </Screen>
   );
 };
 
