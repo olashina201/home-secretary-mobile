@@ -1,26 +1,26 @@
 export default [
     {
         id: '1',
-        title: 'Page 1',
-        description: 'lorem Ipsum is bvjkkjvkjsjdcsd',
-        image: require("./assets/adaptive-icon.png")
+        title: 'Plan it out',
+        description: 'Plan out your day accordingly, habits are not built overnight.',
+        image: require("./assets/plan.png")
     },
     {
         id: '2',
         title: 'Page 2',
         description: 'lorem Ipsum is bvjkkjvkjsjdcsd',
-        image: require("./assets/adaptive-icon.png")
+        image: require("./assets/time-management.png")
     },
     {
         id: '3',
         title: 'Page 3',
         description: 'lorem Ipsum is bvjkkjvkjsjdcsd',
-        image: require("./assets/adaptive-icon.png")
+        image: require("./assets/time-management.png")
     },
     {
         id: '4',
         title: 'Page 4',
         description: 'lorem Ipsum is bvjkkjvkjsjdcsd',
-        image: require("./assets/adaptive-icon.png")
+        image: require("./assets/time-management.png")
     }
 ]
