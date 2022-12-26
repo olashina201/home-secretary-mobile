@@ -7,9 +7,9 @@ export default [
     },
     {
         id: '2',
-        title: 'Page 2',
-        description: 'lorem Ipsum is bvjkkjvkjsjdcsd',
-        image: require("./assets/time-management.png")
+        title: 'Plan and manage events.',
+        description: 'Plan out your day accordingly, habits are not built overnight. Plan out your day accordingly, habits are not built overnight.',
+        image: require("./assets/event.png")
     },
     {
         id: '3',
