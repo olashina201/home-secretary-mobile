@@ -8,12 +8,14 @@ import {
   AppFormField,
   SubmitButton,
 } from "../components/forms";
+import navigationTheme from "../navigation/navigationTheme";
+import AppButton from "../components/AppButton";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().label("Email"),
   password: Yup.string().required().min(4).label("Password"),
 });
-const Login = () => {
+const Login = ({ navigation }) => {
 
   const handleSubmit = async ({ username, password }) => {
     console.log("Submit", username, password)
@@ -50,7 +52,7 @@ const Login = () => {
           textContentType="passowrd"
           // secureTextEntry
         />
-        <SubmitButton title="Login" />
+        <AppButton title="Login" onPress={() => navigation.navigate("Home")} />
       </AppForm>
     </Screen>
   );

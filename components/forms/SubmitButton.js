@@ -4,7 +4,7 @@ import { useFormikContext } from "formik";
 
 const SubmitButton = ({ title }) => {
   const { handleSubmit } = useFormikContext();
-  return <AppButton title={title} onPress={() => navigation.navigate("Home")} />;
+  return <AppButton title={title} />;
 };
 
 export default SubmitButton;
