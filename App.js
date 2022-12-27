@@ -1,10 +1,12 @@
 import { StatusBar } from "expo-status-bar";
+import { NavigationContainer } from "@react-navigation/native";
 import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
 import Onboarding from "./components/Onboarding";
 import Home from "./screens/Home";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useEffect, useState } from "react";
 import Register from "./screens/Register";
+import AuthNavigator from "./navigation/AuthNavigator";
 
 const Loading = () => {
   return (
@@ -34,12 +36,14 @@ export default function App() {
   useEffect(() => {
     checkOnboarding();
   }, []);
-   
+
   return (
     <View style={styles.container}>
-      {loading ? <Loading /> : viewedOnboarding ? <Register /> : <Onboarding />}
-      {/* <Register /> */}
-      <StatusBar style="auto" />
+      <NavigationContainer>
+        {/* {loading ? <Loading /> : viewedOnboarding ? <AuthNavigator /> : <Onboarding />} */}
+        <AuthNavigator />
+        <StatusBar style="auto" />
+      </NavigationContainer>
     </View>
   );
 }

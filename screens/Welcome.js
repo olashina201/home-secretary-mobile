@@ -1,25 +1,25 @@
 import React from "react";
 import { ImageBackground, StyleSheet, View, Image, Text } from "react-native";
 import AppButton from "../components/AppButton";
-import routes from "../navigation/routes";
+// import routes from "../navigation/routes";
 
 const Welcome = ({ navigation }) => {
   return (
     <ImageBackground
       blurRadius={5}
       style={styles.background}
-      source={require("../../assets/background.jpg")}
+      source={require("../assets/background.jpg")}
     >
       <View style={styles.logoContainer}>
         <Image
           style={styles.logo}
-          source={require("../../assets/logo-red.png")}
+          source={require("../assets/logo.png")}
         />
         <Text style={styles.tagline}>Sell Anything Online</Text>
       </View>
       <View style={styles.buttonsConatiner}>
-        <AppButton title="Login" onPress={() => navigation.navigate(routes.LOGIN)} />
-        <AppButton title="Register" color ="secondary" onPress={() => navigation.navigate(routes.REGISTER)} />
+        <AppButton title="Login" onPress={() => navigation.navigate("Login")} />
+        <AppButton title="Register" color ="secondary" onPress={() => navigation.navigate("Register")} />
       </View>
     </ImageBackground>
   );
