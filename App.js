@@ -7,6 +7,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useEffect, useState } from "react";
 import Register from "./screens/Register";
 import AuthNavigator from "./navigation/AuthNavigator";
+import navigationTheme from "./navigation/navigationTheme";
 
 const Loading = () => {
   return (
@@ -38,13 +39,13 @@ export default function App() {
   }, []);
 
   return (
-    <View style={styles.container}>
-      <NavigationContainer>
-        {/* {loading ? <Loading /> : viewedOnboarding ? <AuthNavigator /> : <Onboarding />} */}
-        <AuthNavigator />
-        <StatusBar style="auto" />
+    // <View style={styles.container}>
+      <NavigationContainer theme={navigationTheme}>
+        {loading ? <Loading /> : viewedOnboarding ? <AuthNavigator /> : <Onboarding />}
+        {/* <AuthNavigator /> */}
+        {/* <StatusBar style="auto" /> */}
       </NavigationContainer>
-    </View>
+    // </View>
   );
 }
 

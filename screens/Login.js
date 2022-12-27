@@ -32,7 +32,7 @@ const Login = () => {
       >
         <ErrorMessage
           error="Invalid username or password"
-          visible={loginFailed}
+          // visible={loginFailed}
         />
         <AppFormField
           autoCapitalize="none"
