@@ -37,8 +37,8 @@ export default function App() {
    
   return (
     <View style={styles.container}>
-      {/* {loading ? <Loading /> : viewedOnboarding ? <Register /> : <Onboarding />} */}
-      <Register />
+      {loading ? <Loading /> : viewedOnboarding ? <Register /> : <Onboarding />}
+      {/* <Register /> */}
       <StatusBar style="auto" />
     </View>
   );
