@@ -3,11 +3,11 @@ import React from "react";
 import AppText from "./AppText";
 import colors from "../config/colors";
 
-const TaskCard = ({ title, category, time }) => {
+const TaskCard = ({ title, category, time, onPress }) => {
   return (
     <Pressable
       style={[styles.tasksContent, styles.shadowProp]}
-      onPress={() => console.log(item)}
+      onPress={onPress}
     >
       <View style={styles.tasksHeader}>
         <AppText>{title}</AppText>
