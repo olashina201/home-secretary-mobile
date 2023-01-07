@@ -154,16 +154,18 @@ const styles = StyleSheet.create({
     marginTop: 10,
     display: "flex",
     padding: 15,
-    backgroundColor: colors.primary,
+    // backgroundColor: colors.primary,
     borderRadius: 20
   },
   shadowProp: {
-    shadowColor: "#171717",
-    // shadowOffset: { width: -2, height: 4 },
-    // shadowOpacity: 0.2,
-    // shadowRadius: 3,
-    elevation: 20,
-
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
   tasksHeader: {
     display: "flex",
