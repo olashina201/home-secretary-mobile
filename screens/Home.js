@@ -24,6 +24,19 @@ const Home = () => {
           setSelectedDate={setSelectedDate}
         />
       </View>
+      <View style={styles.tasksConatiner}>
+        <View style={styles.header}>
+          <AppText style={styles.title}>Tasks</AppText>
+          <View style={styles.filterSection}>
+            <AppText style={styles.title}>filter</AppText>
+            <MaterialCommunityIcons
+              name="filter"
+              size={25}
+              color={colors.medium}
+            />
+          </View>
+        </View>
+      </View>
     </Screen>
   );
 };
@@ -35,7 +48,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: colors.white,
     padding: 20,
-    flexDirection: 'column',
   },
   header: {
     display: "flex",
@@ -47,5 +59,14 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: "bold",
     color: colors.primary,
+  },
+  tasksConatiner: {
+    marginTop: 10,
+    display: "flex",
+  },
+  filterSection: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
   }
 });
