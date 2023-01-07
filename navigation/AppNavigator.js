@@ -13,7 +13,7 @@ const AppNavigator = () => (
       options={{
         headerShown: false,
         tabBarIcon: ({ size, color }) => (
-          <MaterialCommunityIcons name="home" size={size} color={color} />
+          <MaterialCommunityIcons name="table-settings" size={size} color={color} />
         ),
       }}
     />
@@ -26,16 +26,17 @@ const AppNavigator = () => (
           <MaterialCommunityIcons name="plus-circle" size={size} color={color} />
         ),
       })}
-    />
+    /> */}
     <Tab.Screen
-      name="Home3"
+      name="Settings"
       component={HomeNavigator}
       options={{
+        headerShown: false,
         tabBarIcon: ({ size, color }) => (
-          <MaterialCommunityIcons name="account" size={size} color={color} />
+          <MaterialCommunityIcons name="account-settings" size={size} color={color} />
         ),
       }}
-    /> */}
+    />
   </Tab.Navigator>
 );
 
