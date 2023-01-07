@@ -78,7 +78,7 @@ const Home = () => {
   return (
     <Screen style={styles.container}>
       <View style={styles.header}>
-        <AppText style={styles.title}>Schedule</AppText>
+        <AppText style={styles.title}>January</AppText>
         <MaterialCommunityIcons
           name="plus-circle"
           size={50}
