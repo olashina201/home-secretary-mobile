@@ -17,16 +17,36 @@ const AppNavigator = () => (
         ),
       }}
     />
-    {/* <Tab.Screen
+    <Tab.Screen
+      name="Analytics"
+      component={HomeNavigator}
+      options={{
+        headerShown: false,
+        tabBarIcon: ({ size, color }) => (
+          <MaterialCommunityIcons name="google-analytics" size={size} color={color} />
+        ),
+      }}
+    />
+    <Tab.Screen
       name="Home2"
-      component={AuthNavigator}
+      component={HomeNavigator}
       options={({ navigation }) => ({
-        // tabBarButton: () => <NewListingButton onPress={() => navigation.navigate(routes.LISTING_EDIT)} />,
+        tabBarButton: () => <NewListingButton />,
         tabBarIcon: ({ size, color }) => (
           <MaterialCommunityIcons name="plus-circle" size={size} color={color} />
         ),
       })}
-    /> */}
+    />
+    <Tab.Screen
+      name="Chats"
+      component={HomeNavigator}
+      options={{
+        headerShown: false,
+        tabBarIcon: ({ size, color }) => (
+          <MaterialCommunityIcons name="chat" size={size} color={color} />
+        ),
+      }}
+    />
     <Tab.Screen
       name="Settings"
       component={HomeNavigator}
