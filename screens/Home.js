@@ -1,10 +1,11 @@
-import { StyleSheet, Pressable, View, FlatList } from "react-native";
+import { StyleSheet, View, FlatList } from "react-native";
 import React from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Screen from "../components/Screen";
 import AppText from "../components/AppText";
 import colors from "../config/colors";
 import HorizontalCalendar from "../components/HorizontalCalendar";
+import TaskCard from "../components/TaskCard";
 
 const tasks = [
   {
@@ -74,21 +75,6 @@ const tasks = [
 const Home = () => {
   const [selectedDate, setSelectedDate] = React.useState(new Date());
 
-  const renderItem = ({ item, index }) => {
-    return (
-      <Pressable style={[styles.tasksContent, styles.shadowProp]} key={index} onPress={() => console.log(item)}>
-        <View style={styles.tasksHeader}>
-          <AppText>{item.title}</AppText>
-          <AppText>{item.category}</AppText>
-        </View>
-        <View style={styles.tasksHeader}>
-          <AppText>{item.time}</AppText>
-          <AppText>{item.title}</AppText>
-        </View>
-      </Pressable>
-    );
-  };
-
   return (
     <Screen style={styles.container}>
       <View style={styles.header}>
@@ -119,7 +105,14 @@ const Home = () => {
         </View>
         <FlatList
           data={tasks}
-          renderItem={renderItem}
+          renderItem={({ item }) => (
+            <TaskCard
+              title={item.title}
+              category={item.category}
+              time={item.time}
+              onPress={() => console.log(item)}
+            />
+          )}
           keyExtractor={(item) => item.id.toString()}
         />
       </View>
@@ -149,30 +142,6 @@ const styles = StyleSheet.create({
   tasksContainer: {
     marginTop: 10,
     display: "flex",
-  },
-  tasksContent: {
-    marginTop: 10,
-    display: "flex",
-    padding: 15,
-    color: colors.white,
-    backgroundColor: colors.primary,
-    borderRadius: 20,
-  },
-  shadowProp: {
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
-    elevation: 5,
-  },
-  tasksHeader: {
-    display: "flex",
-    color: colors.white,
-    flexDirection: "row",
-    justifyContent: "space-between",
   },
   filterSection: {
     display: "flex",
