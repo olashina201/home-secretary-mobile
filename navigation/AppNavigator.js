@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import HomeNavigator from "./HomeNavigator";
+import ChatNavigation from "./ChatNavigation";
 
 const Tab = createBottomTabNavigator();
 const AppNavigator = () => (
@@ -19,7 +20,7 @@ const AppNavigator = () => (
     />
     <Tab.Screen
       name="Analytics"
-      component={HomeNavigator}
+      component={ChatNavigation}
       options={{
         headerShown: false,
         tabBarIcon: ({ size, color }) => (
@@ -39,7 +40,7 @@ const AppNavigator = () => (
     /> */}
     <Tab.Screen
       name="Chats"
-      component={HomeNavigator}
+      component={ChatNavigation}
       options={{
         headerShown: false,
         tabBarIcon: ({ size, color }) => (
