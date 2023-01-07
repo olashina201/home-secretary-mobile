@@ -27,7 +27,7 @@ const AppNavigator = () => (
         ),
       }}
     />
-    <Tab.Screen
+    {/* <Tab.Screen
       name="Home2"
       component={HomeNavigator}
       options={({ navigation }) => ({
@@ -36,7 +36,7 @@ const AppNavigator = () => (
           <MaterialCommunityIcons name="plus-circle" size={size} color={color} />
         ),
       })}
-    />
+    /> */}
     <Tab.Screen
       name="Chats"
       component={HomeNavigator}
