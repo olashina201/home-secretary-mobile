@@ -81,7 +81,7 @@ const Home = () => {
         <AppText style={styles.title}>January</AppText>
         <MaterialCommunityIcons
           name="plus-circle"
-          size={50}
+          size={40}
           color={colors.primary}
         />
       </View>
