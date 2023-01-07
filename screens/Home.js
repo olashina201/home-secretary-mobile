@@ -76,13 +76,13 @@ const Home = () => {
 
   const renderItem = ({ item, index }) => {
     return (
-      <Pressable style={[styles.tasksContent, styles.shadowProp]} key={index}>
+      <Pressable style={[styles.tasksContent, styles.shadowProp]} key={index} onPress={() => console.log(item)}>
         <View style={styles.tasksHeader}>
           <AppText>{item.title}</AppText>
           <AppText>{item.category}</AppText>
         </View>
         <View style={styles.tasksHeader}>
-          <AppText>{item.title}</AppText>
+          <AppText>{item.time}</AppText>
           <AppText>{item.title}</AppText>
         </View>
       </Pressable>
@@ -154,8 +154,9 @@ const styles = StyleSheet.create({
     marginTop: 10,
     display: "flex",
     padding: 15,
-    // backgroundColor: colors.primary,
-    borderRadius: 20
+    color: colors.white,
+    backgroundColor: colors.primary,
+    borderRadius: 20,
   },
   shadowProp: {
     shadowColor: '#000',
@@ -169,6 +170,7 @@ const styles = StyleSheet.create({
   },
   tasksHeader: {
     display: "flex",
+    color: colors.white,
     flexDirection: "row",
     justifyContent: "space-between",
   },
