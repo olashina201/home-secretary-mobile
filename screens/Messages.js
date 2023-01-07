@@ -99,9 +99,9 @@ const Messages = ({ navigation }) => {
           showsVerticalScrollIndicator={false}
           renderItem={({ item }) => (
             <Card
-            // onPress={() =>
-            //   navigation.navigate("Chat", { userName: item.userName })
-            // }
+            onPress={() =>
+              navigation.navigate("Chat", { userName: item.userName })
+            }
             >
               <UserInfo>
                 <UserImgWrapper>
