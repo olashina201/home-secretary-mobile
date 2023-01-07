@@ -1,14 +1,19 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
+import Screen from "../components/Screen";
 
 const Home = () => {
   return (
-    <View>
+    <Screen style={styles.container}>
       <Text>Home</Text>
-    </View>
-  )
-}
+    </Screen>
+  );
+};
 
-export default Home
+export default Home;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    padding: 10,
+  },
+});

@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import Register from "./screens/Register";
 import AuthNavigator from "./navigation/AuthNavigator";
 import navigationTheme from "./navigation/navigationTheme";
+import AppNavigator from "./navigation/AppNavigator";
 
 const Loading = () => {
   return (
@@ -41,8 +42,8 @@ export default function App() {
   return (
     // <View style={styles.container}>
       <NavigationContainer theme={navigationTheme}>
-        {loading ? <Loading /> : viewedOnboarding ? <AuthNavigator /> : <Onboarding />}
-        {/* <AuthNavigator /> */}
+        {/* {loading ? <Loading /> : viewedOnboarding ? <AuthNavigator /> : <Onboarding />} */}
+        <AppNavigator />
         {/* <StatusBar style="auto" /> */}
       </NavigationContainer>
     // </View>
