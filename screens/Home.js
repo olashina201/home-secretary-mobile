@@ -133,49 +133,53 @@ const Home = () => {
     //   </View>
     // </Screen>
     <Screen>
-      <ScrollView>
-        <View style={styles.headerWrapper}>
-          <View style={styles.headerTop}>
-            <Logo />
-            <Image source={require("../assets/plus-button.png")} />
-          </View>
-          <View style={styles.headerBottom}>
-            <View style={styles.header_BottomTitleWrap}>
-              <Text style={styles.header_bottomTitle}>Boards</Text>
-              <View style={styles.header_ChooseLayout}>
-                <LayoutThumb.style1 />
-                <View style={styles.header_ChooseLayout_divider} />
-                <LayoutThumb.style2 />
+      <View style={styles.container}>
+        <ScrollView>
+          <View style={styles.headerWrapper}>
+            <View style={styles.headerTop}>
+              <Logo />
+              <Image source={require("../assets/plus-button.png")} />
+            </View>
+            <View style={styles.headerBottom}>
+              <View style={styles.header_BottomTitleWrap}>
+                <Text style={styles.header_bottomTitle}>Boards</Text>
+                <View style={styles.header_ChooseLayout}>
+                  <LayoutThumb.style1 />
+                  <View style={styles.header_ChooseLayout_divider} />
+                  <LayoutThumb.style2 />
+                </View>
               </View>
             </View>
+            <View style={styles.header_SearchWrapper}>
+              <MaterialIcons name="search" size={24} color="#7E8CBA" />
+              <TextInput
+                placeholder="Search cards..."
+                style={styles.header_SearchInput}
+                placeholderTextColor="#8E9AC3"
+              />
+            </View>
+            <View style={styles.header_NavigationWrapper}>
+              <Text
+                style={[styles.header_NavItem, styles.header_NavItemActive]}
+              >
+                All Boards
+              </Text>
+              <Text style={styles.header_NavItem}>Teams</Text>
+              <Text style={styles.header_NavItem}>Personal</Text>
+            </View>
           </View>
-          <View style={styles.header_SearchWrapper}>
-            <MaterialIcons name="search" size={24} color="#7E8CBA" />
-            <TextInput
-              placeholder="Search cards..."
-              style={styles.header_SearchInput}
-              placeholderTextColor="#8E9AC3"
+          <View style={styles.mainBottom}>
+            <Card
+              title="Google"
+              logo={require("../assets/Img/Google_logo.png")}
+            />
+            <Card
+              title="Facebook"
+              logo={require("../assets/Img/Facebook_logo.png")}
             />
           </View>
-          <View style={styles.header_NavigationWrapper}>
-            <Text style={[styles.header_NavItem, styles.header_NavItemActive]}>
-              All Boards
-            </Text>
-            <Text style={styles.header_NavItem}>Teams</Text>
-            <Text style={styles.header_NavItem}>Personal</Text>
-          </View>
-        </View>
-        <View style={styles.mainBottom}>
-          <Card
-            title="Google"
-            logo={require("../assets/Img/Google_logo.png")}
-          />
-          <Card
-            title="Facebook"
-            logo={require("../assets/Img/Facebook_logo.png")}
-          />
-        </View>
-      </ScrollView>
+        </ScrollView>
+      </View>
     </Screen>
   );
 };

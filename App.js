@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
 import Onboarding from "./components/Onboarding";
 import Home from "./screens/Home";
+import * as Font from 'expo-font';
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useEffect, useState } from "react";
 import Register from "./screens/Register";
@@ -20,7 +21,17 @@ const Loading = () => {
 
 export default function App() {
   const [loading, setLoading] = useState(true);
+  const [fontsLoaded, setFontLoaded] = useState(false);
   const [viewedOnboarding, setViewedOnboarding] = useState(false);
+
+  const _loadAssetAsync = async () => {
+    await Font.loadAsync({
+      "sf-medium": require("./assets/Fonts/SF-Compact-Display-Medium.otf"),
+      "sf-bold": require("./assets/Fonts/SF-Compact-Display-Bold.otf")
+    });
+
+    setFontLoaded(true);
+  }
 
   const checkOnboarding = async () => {
     try {
@@ -37,6 +48,7 @@ export default function App() {
 
   useEffect(() => {
     checkOnboarding();
+    _loadAssetAsync();
   }, []);
 
   return (

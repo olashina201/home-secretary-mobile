@@ -11,7 +11,7 @@ const Tab = createBottomTabNavigator();
 const AppNavigator = () => (
   <Tab.Navigator>
     <Tab.Screen
-      name="Home"
+      name="Boards"
       component={HomeNavigator}
       options={{
         headerShown: false,
