@@ -5,7 +5,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 import HomeNavigator from "./HomeNavigator";
 import ChatNavigation from "./ChatNavigation";
 import HomeIcon from "../components/HomeIcon";
-import colors from "../config/colors";
+import NotificationNavigator from "./NotificationNavigator";
 
 const Tab = createBottomTabNavigator();
 const AppNavigator = () => (
@@ -35,7 +35,7 @@ const AppNavigator = () => (
     />
     <Tab.Screen
       name="Notifications"
-      component={ChatNavigation}
+      component={NotificationNavigator}
       options={{
         headerShown: false,
         tabBarIcon: ({ size, color }) => (
