@@ -19,7 +19,7 @@ const AppNavigator = () => (
       component={HomeNavigator}
       options={{
         headerShown: false,
-        tabBarIcon: ({ size, color }) => <HomeIcon />,
+        tabBarIcon: ({ size, color }) => <HomeIcon color={color} />,
       }}
     />
     <Tab.Screen
