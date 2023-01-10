@@ -1,9 +1,11 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { MaterialIcons } from "@expo/vector-icons";
 
 import HomeNavigator from "./HomeNavigator";
 import ChatNavigation from "./ChatNavigation";
+import HomeIcon from "../components/HomeIcon";
+import colors from "../config/colors";
 
 const Tab = createBottomTabNavigator();
 const AppNavigator = () => (
@@ -14,47 +16,37 @@ const AppNavigator = () => (
       options={{
         headerShown: false,
         tabBarIcon: ({ size, color }) => (
-          <MaterialCommunityIcons name="table-settings" size={size} color={color} />
+          <HomeIcon />
         ),
       }}
     />
     <Tab.Screen
-      name="Analytics"
+      name="Chat"
       component={ChatNavigation}
       options={{
         headerShown: false,
         tabBarIcon: ({ size, color }) => (
-          <MaterialCommunityIcons name="google-analytics" size={size} color={color} />
+          <MaterialIcons name="chat-bubble" size={size} color={colors.light} />
         ),
       }}
     />
-    {/* <Tab.Screen
-      name="Home2"
-      component={HomeNavigator}
-      options={({ navigation }) => ({
-        tabBarButton: () => <NewListingButton />,
-        tabBarIcon: ({ size, color }) => (
-          <MaterialCommunityIcons name="plus-circle" size={size} color={color} />
-        ),
-      })}
-    /> */}
     <Tab.Screen
-      name="Chats"
+      name="Notifications"
       component={ChatNavigation}
       options={{
         headerShown: false,
         tabBarIcon: ({ size, color }) => (
-          <MaterialCommunityIcons name="chat" size={size} color={color} />
+          <MaterialIcons name="notifications" size={24} color={colors.light} />
         ),
       }}
     />
     <Tab.Screen
-      name="Settings"
+      name="Profile"
       component={HomeNavigator}
       options={{
         headerShown: false,
         tabBarIcon: ({ size, color }) => (
-          <MaterialCommunityIcons name="account-settings" size={size} color={color} />
+          <MaterialIcons name="person" size={size} color={colors.light} />
         ),
       }}
     />
