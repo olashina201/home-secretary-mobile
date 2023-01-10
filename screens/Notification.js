@@ -1,6 +1,5 @@
-import React from "react";
 import { StyleSheet, FlatList } from "react-native";
-import { MessagesData } from "../data/Messages";
+import React from "react";
 import {
   Card,
   Container,
@@ -13,18 +12,20 @@ import {
   UserInfoText,
   UserName,
 } from "../styles/MessageStyle";
+import { Notifications } from "../data/notifications";
 
-const Messages = ({ navigation }) => {
+const Notification = () => {
   return (
     <Container>
       <FlatList
-        data={MessagesData}
+        data={Notifications}
         keyExtractor={(item) => item.id}
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => (
           <Card
             onPress={() =>
-              navigation.navigate("Chat", { userName: item.userName })
+              //   navigation.navigate("Chat", { userName: item.userName })
+              console.log(item)
             }
           >
             <UserInfo>
@@ -46,12 +47,6 @@ const Messages = ({ navigation }) => {
   );
 };
 
-export default Messages;
+export default Notification;
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
+const styles = StyleSheet.create({});
