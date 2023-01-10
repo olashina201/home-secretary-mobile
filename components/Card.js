@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, Image, StyleSheet } from "react-native";
 
-const Card = ({ title, logo }) => (
+const Card = ({ title, logo, board, members }) => (
   <View style={styles.container}>
     <View style={styles.header}>
       <View style={styles.headerLogoWrapper}>
@@ -16,7 +16,7 @@ const Card = ({ title, logo }) => (
       </View>
       <View style={styles.innerItemWrapper}>
         <Text style={styles.innerItem_Title}>Design Task</Text>
-        <Text style={styles.innerItem_Description}>10 Members</Text>
+        <Text style={styles.innerItem_Description}>{members} Members</Text>
       </View>
     </View>
   </View>

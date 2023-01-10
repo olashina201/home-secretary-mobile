@@ -4,6 +4,7 @@ import {
   Image,
   SafeAreaView,
   TextInput,
+  FlatList,
   ScrollView,
 } from "react-native";
 import * as Font from "expo-font";
@@ -87,6 +88,30 @@ const tasks = [
     time: "7:00am",
   },
 ];
+
+const boards = [
+  {
+    id: 1,
+    title: "Board 1",
+    description: "Lorem ipsum dolor sit amet, consectetur adip",
+    board: "House Chores",
+    members: 20,
+  },
+  {
+    id: 2,
+    title: "Board 1",
+    description: "Lorem ipsum dolor sit amet, consectetur adip",
+    board: "House Chores",
+    members: 20,
+  },
+  {
+    id: 3,
+    title: "Board 1",
+    description: "Lorem ipsum dolor sit amet, consectetur adip",
+    board: "House Chores",
+    members: 20,
+  },
+];
 const Home = () => {
   const [selectedDate, setSelectedDate] = React.useState(new Date());
 
@@ -134,40 +159,48 @@ const Home = () => {
     // </Screen>
     <Screen>
       <View style={styles.container}>
-        <ScrollView>
-          <View style={styles.headerWrapper}>
-            <View style={styles.headerTop}>
-              <Logo />
-              <Image source={require("../assets/plus-button.png")} />
-            </View>
-            <View style={styles.headerBottom}>
-              <View style={styles.header_BottomTitleWrap}>
-                <Text style={styles.header_bottomTitle}>Boards</Text>
-                <View style={styles.header_ChooseLayout}>
-                  <LayoutThumb.style1 />
-                  <View style={styles.header_ChooseLayout_divider} />
-                  <LayoutThumb.style2 />
-                </View>
+        <View style={styles.headerWrapper}>
+          <View style={styles.headerTop}>
+            <Logo />
+            <Image source={require("../assets/plus-button.png")} />
+          </View>
+          <View style={styles.headerBottom}>
+            <View style={styles.header_BottomTitleWrap}>
+              <Text style={styles.header_bottomTitle}>Boards</Text>
+              <View style={styles.header_ChooseLayout}>
+                <LayoutThumb.style1 />
+                <View style={styles.header_ChooseLayout_divider} />
+                <LayoutThumb.style2 />
               </View>
             </View>
-            <View style={styles.header_SearchWrapper}>
-              <MaterialIcons name="search" size={24} color="#7E8CBA" />
-              <TextInput
-                placeholder="Search cards..."
-                style={styles.header_SearchInput}
-                placeholderTextColor="#8E9AC3"
-              />
-            </View>
-            <View style={styles.header_NavigationWrapper}>
-              <Text
-                style={[styles.header_NavItem, styles.header_NavItemActive]}
-              >
-                All Boards
-              </Text>
-              <Text style={styles.header_NavItem}>Teams</Text>
-              <Text style={styles.header_NavItem}>Personal</Text>
-            </View>
           </View>
+          <View style={styles.header_SearchWrapper}>
+            <MaterialIcons name="search" size={24} color="#7E8CBA" />
+            <TextInput
+              placeholder="Search cards..."
+              style={styles.header_SearchInput}
+              placeholderTextColor="#8E9AC3"
+            />
+          </View>
+          <View style={styles.header_NavigationWrapper}>
+            <Text style={[styles.header_NavItem, styles.header_NavItemActive]}>
+              All Boards
+            </Text>
+            <Text style={styles.header_NavItem}>Teams</Text>
+            <Text style={styles.header_NavItem}>Personal</Text>
+          </View>
+        </View>
+        <FlatList
+          data={tasks}
+          renderItem={({ item }) => (
+            <Card
+              title={item.title}
+              logo={require("../assets/Img/Google_logo.png")}
+            />
+          )}
+          keyExtractor={(item) => item.id.toString()}
+        />
+        {/* <ScrollView>
           <View style={styles.mainBottom}>
             <Card
               title="Google"
@@ -178,7 +211,7 @@ const Home = () => {
               logo={require("../assets/Img/Facebook_logo.png")}
             />
           </View>
-        </ScrollView>
+        </ScrollView> */}
       </View>
     </Screen>
   );
