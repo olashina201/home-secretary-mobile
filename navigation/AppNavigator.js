@@ -25,8 +25,9 @@ const AppNavigator = () => (
       component={ChatNavigation}
       options={{
         headerShown: false,
+        tabBarInactiveBackgroundColor: colors.light,
         tabBarIcon: ({ size, color }) => (
-          <MaterialIcons name="chat-bubble" size={size} color={colors.light} />
+          <MaterialIcons name="chat-bubble" size={size} color={color} />
         ),
       }}
     />

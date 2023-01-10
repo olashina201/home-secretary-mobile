@@ -3,7 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
 import Onboarding from "./components/Onboarding";
 import Home from "./screens/Home";
-import * as Font from 'expo-font';
+import * as Font from "expo-font";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useEffect, useState } from "react";
 import Register from "./screens/Register";
@@ -27,11 +27,11 @@ export default function App() {
   const _loadAssetAsync = async () => {
     await Font.loadAsync({
       "sf-medium": require("./assets/Fonts/SF-Compact-Display-Medium.otf"),
-      "sf-bold": require("./assets/Fonts/SF-Compact-Display-Bold.otf")
+      "sf-bold": require("./assets/Fonts/SF-Compact-Display-Bold.otf"),
     });
 
     setFontLoaded(true);
-  }
+  };
 
   const checkOnboarding = async () => {
     try {
@@ -53,11 +53,12 @@ export default function App() {
 
   return (
     // <View style={styles.container}>
-      <NavigationContainer theme={navigationTheme}>
-        {/* {loading ? <Loading /> : viewedOnboarding ? <AuthNavigator /> : <Onboarding />} */}
-        <AppNavigator />
-        {/* <StatusBar style="auto" /> */}
-      </NavigationContainer>
+    <NavigationContainer theme={navigationTheme}>
+      {/* {loading ? <Loading /> : viewedOnboarding ? <AuthNavigator /> : <Onboarding />} */}
+      {fontsLoaded ? <AppNavigator /> : null}
+
+      {/* <StatusBar style="auto" /> */}
+    </NavigationContainer>
     // </View>
   );
 }
