@@ -2,12 +2,12 @@ import React, { Component, Fragment } from "react";
 import { View, Text, Image, SafeAreaView, TextInput, ScrollView } from "react-native";
 import * as Font from 'expo-font';
 import { MaterialIcons } from '@expo/vector-icons';
-import styles from './Style';
+import styles from '../Style';
 
-import Logo from './components/Logo'
-import LayoutThumb from './components/LayoutThumb'
-import Card from './components/Card'
-import HomeIcon from './components/HomeIcon'
+import Logo from '../components/Logo'
+import LayoutThumb from '../components/LayoutThumb'
+import Card from '../components/Card'
+import HomeIcon from '../components/HomeIcon'
 
 class Test extends Component {
   constructor(props) {
@@ -24,8 +24,8 @@ class Test extends Component {
 
   async _loadAssetAsync() {
     await Font.loadAsync({
-      "sf-medium": require("./assets/Fonts/SF-Compact-Display-Medium.otf"),
-      "sf-bold": require("./assets/Fonts/SF-Compact-Display-Bold.otf")
+      "sf-medium": require("../assets/Fonts/SF-Compact-Display-Medium.otf"),
+      "sf-bold": require("../assets/Fonts/SF-Compact-Display-Bold.otf")
     });
 
     this.setState({ fontsLoaded: true });
@@ -38,7 +38,7 @@ class Test extends Component {
           <View style={styles.headerWrapper}>
               <View style={styles.headerTop}>
                 <Logo />
-                <Image source={require('./assets/plus-button.png')} />
+                <Image source={require('../assets/plus-button.png')} />
               </View>
               <View style={styles.headerBottom}>
                 <View style={styles.header_BottomTitleWrap}>
@@ -61,8 +61,8 @@ class Test extends Component {
               </View>
           </View>
           <View style={styles.mainBottom}>
-              <Card title="Google" logo={require('./assets/Img/Google_logo.png')} />
-              <Card title="Facebook" logo={require('./assets/Img/Facebook_logo.png')} />
+              <Card title="Google" logo={require('../assets/Img/Google_logo.png')} />
+              <Card title="Facebook" logo={require('../assets/Img/Facebook_logo.png')} />
           </View>
         </ScrollView>
         <View style={styles.bottomNavigation}>
