@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/native';
 
 export const Container = styled.View`
   flex: 1;
@@ -33,8 +33,8 @@ export const TextSection = styled.View`
   justify-content: center;
   padding: 15px;
   padding-left: 0;
-  margin-left: 10px;
-  width: 300px;
+  margin-left: 5px;
+  width: 90%;
   border-bottom-width: 1px;
   border-bottom-color: #cccccc;
 `;

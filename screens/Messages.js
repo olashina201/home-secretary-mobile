@@ -91,35 +91,33 @@ const MessagesData = [
 
 const Messages = ({ navigation }) => {
   return (
-    <Screen>
-      <Container>
-        <FlatList
-          data={MessagesData}
-          keyExtractor={(item) => item.id}
-          showsVerticalScrollIndicator={false}
-          renderItem={({ item }) => (
-            <Card
+    <Container>
+      <FlatList
+        data={MessagesData}
+        keyExtractor={(item) => item.id}
+        showsVerticalScrollIndicator={false}
+        renderItem={({ item }) => (
+          <Card
             onPress={() =>
               navigation.navigate("Chat", { userName: item.userName })
             }
-            >
-              <UserInfo>
-                <UserImgWrapper>
-                  <UserImg source={item.userImg} />
-                </UserImgWrapper>
-                <TextSection>
-                  <UserInfoText>
-                    <UserName>{item.userName}</UserName>
-                    <PostTime>{item.messageTime}</PostTime>
-                  </UserInfoText>
-                  <MessageText>{item.messageText}</MessageText>
-                </TextSection>
-              </UserInfo>
-            </Card>
-          )}
-        />
-      </Container>
-    </Screen>
+          >
+            <UserInfo>
+              <UserImgWrapper>
+                <UserImg source={item.userImg} />
+              </UserImgWrapper>
+              <TextSection>
+                <UserInfoText>
+                  <UserName>{item.userName}</UserName>
+                  <PostTime>{item.messageTime}</PostTime>
+                </UserInfoText>
+                <MessageText>{item.messageText}</MessageText>
+              </TextSection>
+            </UserInfo>
+          </Card>
+        )}
+      />
+    </Container>
   );
 };
 

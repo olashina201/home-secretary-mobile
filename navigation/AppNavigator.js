@@ -23,11 +23,11 @@ const AppNavigator = () => (
       }}
     />
     <Tab.Screen
-      name="Chat"
+      name="Messages"
       component={ChatNavigation}
       options={{
         headerShown: false,
-        tabBarActiveTintColor: colors.light,
+        // tabBarActiveTintColor: colors.light,
         tabBarIcon: ({ size, color }) => (
           <MaterialIcons name="chat-bubble" size={size} color={color} />
         ),
@@ -39,7 +39,7 @@ const AppNavigator = () => (
       options={{
         headerShown: false,
         tabBarIcon: ({ size, color }) => (
-          <MaterialIcons name="notifications" size={24} color={colors.light} />
+          <MaterialIcons name="notifications" size={24} color={color} />
         ),
       }}
     />
@@ -49,7 +49,7 @@ const AppNavigator = () => (
       options={{
         headerShown: false,
         tabBarIcon: ({ size, color }) => (
-          <MaterialIcons name="person" size={size} color={colors.light} />
+          <MaterialIcons name="person" size={size} color={color} />
         ),
       }}
     />
