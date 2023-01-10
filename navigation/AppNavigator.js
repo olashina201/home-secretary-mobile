@@ -9,15 +9,17 @@ import colors from "../config/colors";
 
 const Tab = createBottomTabNavigator();
 const AppNavigator = () => (
-  <Tab.Navigator>
+  <Tab.Navigator
+    screenOptions={{
+      tabBarShowLabel: false,
+    }}
+  >
     <Tab.Screen
       name="Boards"
       component={HomeNavigator}
       options={{
         headerShown: false,
-        tabBarIcon: ({ size, color }) => (
-          <HomeIcon />
-        ),
+        tabBarIcon: ({ size, color }) => <HomeIcon />,
       }}
     />
     <Tab.Screen
@@ -25,7 +27,7 @@ const AppNavigator = () => (
       component={ChatNavigation}
       options={{
         headerShown: false,
-        tabBarInactiveBackgroundColor: colors.light,
+        tabBarActiveTintColor: colors.light,
         tabBarIcon: ({ size, color }) => (
           <MaterialIcons name="chat-bubble" size={size} color={color} />
         ),

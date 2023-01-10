@@ -1,5 +1,6 @@
 import React from "react";
 import Svg, { Rect, Path } from "react-native-svg";
+import colors from "../config/colors";
 
 const Logo = props => (
   <Svg width={42} height={44} fill="none" {...props}>
@@ -19,7 +20,7 @@ const Logo = props => (
     />
     <Path
       d="M32.053 24.196a5.646 5.646 0 01-5.646 5.646h-4.302V13.816a4.974 4.974 0 119.947 0v10.38z"
-      fill="#3E80FF"
+      fill={colors.primary}
     />
   </Svg>
 );

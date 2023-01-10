@@ -1,3 +1,5 @@
+import colors from "./config/colors";
+
 const fonts = {
   medium: {
     fontFamily: "sf-medium",
@@ -63,7 +65,7 @@ const styles = {
     fontSize: 18,
   },
   header_NavItemActive: {
-    color: "#3E80FF",
+    color: colors.primary,
   },
 
   mainBottom: {

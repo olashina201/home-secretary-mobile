@@ -1,10 +1,11 @@
 import React from "react";
 import Svg, { Rect } from "react-native-svg";
+import colors from "../config/colors";
 
 const style1 = props => (
   <Svg width={16} height={13} fill="none" {...props}>
-    <Rect width={16} height={6} rx={1} fill="#3E80FF" />
-    <Rect y={7} width={16} height={6} rx={1} fill="#3E80FF" />
+    <Rect width={16} height={6} rx={1} fill={colors.primary} />
+    <Rect y={7} width={16} height={6} rx={1} fill={colors.primary} />
   </Svg>
 );
 
