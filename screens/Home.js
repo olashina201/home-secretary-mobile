@@ -89,6 +89,21 @@ const tasks = [
   },
 ];
 
+const routes = [
+  {
+    id: 1,
+    title: "All Boards",
+  },
+  {
+    id: 2,
+    title: "All Tasks",
+  },
+  {
+    id: 3,
+    title: "All Events",
+  },
+];
+
 const boards = [
   {
     id: 1,
@@ -114,7 +129,42 @@ const boards = [
 ];
 const Home = () => {
   const [selectedDate, setSelectedDate] = React.useState(new Date());
+  const [currentRoute, setCurrentRoute] = React.useState(1);
 
+  const renderRoute = (index) => {
+    switch (index) {
+      case 1:
+        return (
+          <FlatList
+            data={tasks}
+            renderItem={({ item }) => (
+              <Card
+                title={item.title}
+                logo={require("../assets/Img/Google_logo.png")}
+              />
+            )}
+            keyExtractor={(item) => item.id.toString()}
+          />
+        );
+        break;
+      case 2:
+        return (
+          <FlatList
+            data={tasks}
+            renderItem={({ item }) => (
+              <TaskCard
+                title={item.title}
+                logo={require("../assets/Img/Google_logo.png")}
+              />
+            )}
+            keyExtractor={(item) => item.id.toString()}
+          />
+        );
+        break;
+      default:
+        break;
+    }
+  };
   return (
     // <Screen style={styles.container}>
     //   <View style={styles.header}>
@@ -183,14 +233,23 @@ const Home = () => {
             />
           </View>
           <View style={styles.header_NavigationWrapper}>
-            <Text style={[styles.header_NavItem, styles.header_NavItemActive]}>
-              All Boards
-            </Text>
-            <Text style={styles.header_NavItem}>Teams</Text>
-            <Text style={styles.header_NavItem}>Personal</Text>
+            {routes.map((route) => (
+              <Text
+                key={route.id}
+                style={[
+                  styles.header_NavItem,
+                  route.id === currentRoute
+                    ? styles.header_NavItemActive
+                    : null,
+                ]}
+                onPress={() => setCurrentRoute(route.id)}
+              >
+                {route.title}
+              </Text>
+            ))}
           </View>
         </View>
-        <FlatList
+        {/* <FlatList
           data={tasks}
           renderItem={({ item }) => (
             <Card
@@ -199,7 +258,8 @@ const Home = () => {
             />
           )}
           keyExtractor={(item) => item.id.toString()}
-        />
+        /> */}
+        {renderRoute(currentRoute)}
         {/* <ScrollView>
           <View style={styles.mainBottom}>
             <Card
