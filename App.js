@@ -28,6 +28,7 @@ export default function App() {
     await Font.loadAsync({
       "sf-medium": require("./assets/Fonts/SF-Compact-Display-Medium.otf"),
       "sf-bold": require("./assets/Fonts/SF-Compact-Display-Bold.otf"),
+      "Lato-Regular'": require("./assets/Fonts/Lato-Regular.ttf"),
     });
 
     setFontLoaded(true);
