@@ -1,48 +1,68 @@
-import { StyleSheet, Pressable, View } from "react-native";
 import React from "react";
-import AppText from "./AppText";
-import colors from "../config/colors";
+import { View, Text, Image, StyleSheet } from "react-native";
 
-const TaskCard = ({ title, category, time, onPress }) => {
-  return (
-    <Pressable
-      style={[styles.tasksContent, styles.shadowProp]}
-      onPress={onPress}
-    >
-      <View style={styles.tasksHeader}>
-        <AppText>{title}</AppText>
-        <AppText>{category}</AppText>
+const TaskCard = ({ title, logo, board, members }) => (
+  <View style={styles.container}>
+    <View style={styles.body}>
+      <View style={styles.innerItemWrapper}>
+        <Text style={styles.innerItem_Title}>Back End Development</Text>
+        <Text style={styles.innerItem_Description}>15 Members</Text>
       </View>
-      <View style={styles.tasksHeader}>
-        <AppText>{time}</AppText>
-        <AppText>{title}</AppText>
-      </View>
-    </Pressable>
-  );
-};
-
+    </View>
+  </View>
+);
 export default TaskCard;
 
-const styles = StyleSheet.create({
-  tasksContent: {
-    marginTop: 10,
-    display: "flex",
-    padding: 15,
-    color: colors.white,
-    backgroundColor: colors.light,
-    borderRadius: 20,
+const fonts = {
+  medium: {
+    fontFamily: "sf-medium",
   },
-//   shadowProp: {
-//     shadowColor: colors.primary,
-//     shadowOffset: { width: 0, height: 1 },
-//     shadowOpacity: 0.8,
-//     shadowRadius: 2,  
-//     elevation: 5
-//   },
-  tasksHeader: {
-    display: "flex",
-    color: colors.white,
+  bold: {
+    fontFamily: "sf-bold",
+  },
+};
+
+const styles = StyleSheet.create({
+  container: {
+    paddingHorizontal: 20,
+    marginTop: 10,
+  },
+  header: {
     flexDirection: "row",
-    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  headerLogoWrapper: {
+    backgroundColor: "#fff",
+    borderRadius: 100,
+    padding: 10,
+    marginRight: 10,
+  },
+  headerLogo: {
+    resizeMode: "contain",
+    width: 20,
+    height: 20,
+  },
+  headerTitle: {
+    ...fonts.medium,
+    fontSize: 20,
+    color: "#2C3550",
+  },
+  innerItemWrapper: {
+    backgroundColor: "#FFF",
+    marginTop: 10,
+    padding: 30,
+    paddingBottom: 60,
+    borderRadius: 10,
+  },
+  innerItem_Title: {
+    ...fonts.medium,
+    fontSize: 20,
+    color: "#2C3550",
+  },
+  innerItem_Description: {
+    ...fonts.medium,
+    fontSize: 18,
+    marginTop: 8,
+    color: "#7E8CBA",
   },
 });
