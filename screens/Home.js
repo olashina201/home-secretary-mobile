@@ -1,27 +1,13 @@
-import {
-  View,
-  Text,
-  Image,
-  SafeAreaView,
-  TextInput,
-  FlatList,
-  ScrollView,
-} from "react-native";
-import * as Font from "expo-font";
+import { View, Text, Image, TextInput, FlatList } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import React from "react";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 import Screen from "../components/Screen";
-import AppText from "../components/AppText";
-import colors from "../config/colors";
-import HorizontalCalendar from "../components/HorizontalCalendar";
 import TaskCard from "../components/TaskCard";
 import styles from "../Style";
 
 import Logo from "../components/Logo";
 import LayoutThumb from "../components/LayoutThumb";
 import Card from "../components/Card";
-import HomeIcon from "../components/HomeIcon";
 import EventCard from "../components/EventCard";
 
 const tasks = [
@@ -181,47 +167,6 @@ const Home = () => {
     }
   };
   return (
-    // <Screen style={styles.container}>
-    //   <View style={styles.header}>
-    //     <AppText style={styles.title}>January</AppText>
-    //     <MaterialCommunityIcons
-    //       name="plus-circle"
-    //       size={40}
-    //       color={colors.primary}
-    //     />
-    //   </View>
-    //   <View>
-    //     <HorizontalCalendar
-    //       selectedDate={selectedDate}
-    //       setSelectedDate={setSelectedDate}
-    //     />
-    //   </View>
-    //   <View style={styles.tasksContainer}>
-    //     <View style={styles.header}>
-    //       <AppText style={styles.title}>Tasks</AppText>
-    //       <View style={styles.filterSection}>
-    //         <AppText style={styles.title}>filter</AppText>
-    //         <MaterialCommunityIcons
-    //           name="filter"
-    //           size={25}
-    //           color={colors.medium}
-    //         />
-    //       </View>
-    //     </View>
-    //     <FlatList
-    //       data={tasks}
-    //       renderItem={({ item }) => (
-    //         <TaskCard
-    //           title={item.title}
-    //           category={item.category}
-    //           time={item.time}
-    //           onPress={() => console.log(item)}
-    //         />
-    //       )}
-    //       keyExtractor={(item) => item.id.toString()}
-    //     />
-    //   </View>
-    // </Screen>
     <Screen>
       <View style={styles.container}>
         <View style={styles.headerWrapper}>
@@ -264,60 +209,10 @@ const Home = () => {
             ))}
           </View>
         </View>
-        {/* <FlatList
-          data={tasks}
-          renderItem={({ item }) => (
-            <Card
-              title={item.title}
-              logo={require("../assets/Img/Google_logo.png")}
-            />
-          )}
-          keyExtractor={(item) => item.id.toString()}
-        /> */}
         {renderRoute(currentRoute)}
-        {/* <ScrollView>
-          <View style={styles.mainBottom}>
-            <Card
-              title="Google"
-              logo={require("../assets/Img/Google_logo.png")}
-            />
-            <Card
-              title="Facebook"
-              logo={require("../assets/Img/Facebook_logo.png")}
-            />
-          </View>
-        </ScrollView> */}
       </View>
     </Screen>
   );
 };
 
 export default Home;
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: colors.white,
-//     padding: 15,
-//   },
-//   header: {
-//     display: "flex",
-//     flexDirection: "row",
-//     justifyContent: "space-between",
-//     alignItems: "center",
-//   },
-//   title: {
-//     fontSize: 25,
-//     fontWeight: "bold",
-//     color: colors.primary,
-//   },
-//   tasksContainer: {
-//     marginTop: 10,
-//     display: "flex",
-//   },
-//   filterSection: {
-//     display: "flex",
-//     flexDirection: "row",
-//     alignItems: "center",
-//   },
-// });
