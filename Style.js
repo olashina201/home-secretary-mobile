@@ -56,7 +56,7 @@ const styles = {
   },
   header_NavigationWrapper: {
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
     paddingVertical: 20,
   },
   header_NavItem: {

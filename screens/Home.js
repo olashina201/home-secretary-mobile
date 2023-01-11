@@ -22,6 +22,7 @@ import Logo from "../components/Logo";
 import LayoutThumb from "../components/LayoutThumb";
 import Card from "../components/Card";
 import HomeIcon from "../components/HomeIcon";
+import EventCard from "../components/EventCard";
 
 const tasks = [
   {
@@ -92,15 +93,15 @@ const tasks = [
 const routes = [
   {
     id: 1,
-    title: "All Boards",
+    title: "Boards",
   },
   {
     id: 2,
-    title: "All Tasks",
+    title: "Tasks",
   },
   {
     id: 3,
-    title: "All Events",
+    title: "Events",
   },
 ];
 
@@ -129,11 +130,11 @@ const boards = [
 ];
 const Home = () => {
   const [selectedDate, setSelectedDate] = React.useState(new Date());
-  const [currentRoute, setCurrentRoute] = React.useState(1);
+  const [currentRoute, setCurrentRoute] = React.useState("Boards");
 
   const renderRoute = (index) => {
     switch (index) {
-      case 1:
+      case "Boards":
         return (
           <FlatList
             data={tasks}
@@ -147,12 +148,26 @@ const Home = () => {
           />
         );
         break;
-      case 2:
+      case "Tasks":
         return (
           <FlatList
             data={tasks}
             renderItem={({ item }) => (
               <TaskCard
+                title={item.title}
+                logo={require("../assets/Img/Google_logo.png")}
+              />
+            )}
+            keyExtractor={(item) => item.id.toString()}
+          />
+        );
+        break;
+      case "Events":
+        return (
+          <FlatList
+            data={tasks}
+            renderItem={({ item }) => (
+              <EventCard
                 title={item.title}
                 logo={require("../assets/Img/Google_logo.png")}
               />
@@ -216,7 +231,7 @@ const Home = () => {
           </View>
           <View style={styles.headerBottom}>
             <View style={styles.header_BottomTitleWrap}>
-              <Text style={styles.header_bottomTitle}>Boards</Text>
+              <Text style={styles.header_bottomTitle}>{currentRoute}</Text>
               <View style={styles.header_ChooseLayout}>
                 <LayoutThumb.style1 />
                 <View style={styles.header_ChooseLayout_divider} />
@@ -238,11 +253,11 @@ const Home = () => {
                 key={route.id}
                 style={[
                   styles.header_NavItem,
-                  route.id === currentRoute
+                  route.title === currentRoute
                     ? styles.header_NavItemActive
                     : null,
                 ]}
-                onPress={() => setCurrentRoute(route.id)}
+                onPress={() => setCurrentRoute(route.title)}
               >
                 {route.title}
               </Text>
