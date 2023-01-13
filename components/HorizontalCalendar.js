@@ -14,10 +14,6 @@ const { width } = Dimensions.get("window");
 const ITEM_WIDTH = width * 0.15;
 const ITEM_HEIGHT = 90;
 const ITEM_OFFSET = ITEM_WIDTH + 18;
-// interface Props {
-//   selectedDate: Date;
-//   setSelectedDate: (date: Date) => void;
-// }
 
 function dateSubtractDays(date, days) {
   var result = new Date(date);
