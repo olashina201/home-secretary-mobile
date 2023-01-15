@@ -8,7 +8,7 @@ const NotificationNavigator = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen
-        name="Notifications"
+        name="Notificationss"
         component={Notification}
         options={{ headerShown: true }}
       />
