@@ -1,13 +1,8 @@
-import { StatusBar } from "expo-status-bar";
 import { NavigationContainer } from "@react-navigation/native";
 import { ActivityIndicator, StyleSheet, Text, View } from "react-native";
-import Onboarding from "./components/Onboarding";
-import Home from "./screens/Home";
 import * as Font from "expo-font";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useEffect, useState } from "react";
-import Register from "./screens/Register";
-import AuthNavigator from "./navigation/AuthNavigator";
 import navigationTheme from "./navigation/navigationTheme";
 import AppNavigator from "./navigation/AppNavigator";
 
